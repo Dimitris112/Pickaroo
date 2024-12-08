@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-
 if os.path.exists('env.py'):
     import env
 
@@ -34,7 +33,7 @@ REST_FRAMEWORK = {
     )],
     'DEFAULT_PAGINATION_CLASS':
         'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 8,
     'DATETIME_FORMAT': '%d %b %Y',
 }
 if 'DEV' not in os.environ:
@@ -65,10 +64,13 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    os.environ.get('CLIENT_ORIGIN')
+CSRF_TRUSTED_ORIGINS = [
+    os.environ.get('CLIENT_ORIGIN'), # testing for now
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get("CLIENT_ORIGIN"), # for the front end URL
+]
 CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
@@ -93,7 +95,9 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'corsheaders',
 
-    ## custom ones
+    'profiles',
+    'listings',
+    'favorites',
 ]
 
 SITE_ID = 1
