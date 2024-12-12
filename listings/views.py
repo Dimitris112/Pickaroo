@@ -28,6 +28,16 @@ class ListingUpdate(generics.UpdateAPIView):
     permission_classes = [IsOwnerOrReadOnly]
 
 
+class ListingRenew(generics.UpdateAPIView):
+    queryset = Listing.objects.all()
+    serializer_class = ListingSerializer
+    permission_classes = [IsOwnerOrReadOnly]
+
+    def perform_update(self, serializer):
+        listing = self.get_object()
+        listing.renew()
+
+
 class ListingDelete(generics.DestroyAPIView):
     queryset = Listing.objects.all()
     serializer_class = ListingSerializer
