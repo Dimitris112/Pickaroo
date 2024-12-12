@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('profiles/', include('profiles.urls')),
     path('listings/', include('listings.urls')),
-    # path('favorites/', include('favorites.urls')),
+    path('favorites/', include('favorites.urls')),
+    path('reports/', include('reports.urls')),
+    path('reviews/', include('reviews.urls')),
 ]

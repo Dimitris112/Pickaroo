@@ -10,8 +10,9 @@ class ProfileList(generics.ListAPIView):
     queryset = Profile.objects.annotate(
         listings_count=Count('owner__listings', distinct=True),
         favorites_count=Count('owner__favorites', distinct=True),
+        reviews_count=Count('owner__reviews', distinct=True),
     ).order_by('-created_at')
-    
+
     serializer_class = ProfileSerializer
     filter_backends = [
         filters.OrderingFilter,
@@ -20,10 +21,12 @@ class ProfileList(generics.ListAPIView):
     filterset_fields = [
         'owner__listings',
         'owner__favorites',
+        'owner__reviews',
     ]
     ordering_fields = [
         'listings_count',
         'favorites_count',
+        'reviews_count',
         'created_at',
     ]
 
@@ -33,5 +36,6 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
     queryset = Profile.objects.annotate(
         listings_count=Count('owner__listings', distinct=True),
         favorites_count=Count('owner__favorites', distinct=True),
+        reviews_count=Count('owner__reviews', distinct=True),
     ).order_by('-created_at')
     serializer_class = ProfileSerializer
