@@ -11,7 +11,7 @@ class Review(models.Model):
     rating = models.PositiveSmallIntegerField()  # 1 - 5
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    transaction_id = models.CharField(max_length=255, unique=True)
+    transaction_id = models.CharField(max_length=255, null=True, blank=True)
     deleted = models.BooleanField(default=False)
 
     def __str__(self):
