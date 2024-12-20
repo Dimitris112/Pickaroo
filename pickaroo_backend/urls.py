@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
-
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
-    path('profiles/', include('profiles.urls')),
-    path('listings/', include('listings.urls')),
-    path('favorites/', include('favorites.urls')),
-    path('reports/', include('reports.urls')),
-    path('reviews/', include('reviews.urls')),
+
+    path('api/profiles/', include('profiles.urls')),
+    path('api/listings/', include('listings.urls')),
+    path('api/favorites/', include('favorites.urls')),
+    path('api/reports/', include('reports.urls')),
+    path('api/reviews/', include('reviews.urls')),
 ]
+
+handler404 = TemplateView.as_view(template_name='index.html')
