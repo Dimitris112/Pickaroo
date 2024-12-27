@@ -1,0 +1,61 @@
+.listingCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    background-color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.listingCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.listingCard img {
+    width: 100%;
+    height: auto;
+}
+
+.listingCard .content {
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.listingCard h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.listingCard p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.listingCard .price {
+    font-size: 1.25rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.listingCard button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.listingCard button:hover {
+    background-color: #0056b3;
+}
