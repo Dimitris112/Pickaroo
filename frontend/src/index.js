@@ -8,6 +8,7 @@ import AuthProvider from "./contexts/AuthContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
 import { ListingsProvider } from "./contexts/ListingContext";
 import { NotificationsProvider } from "./contexts/NotificationsContext";
+import { ReviewsProvider } from "./contexts/ReviewsContext";
 
 ReactDOM.render(
   <Router>
@@ -15,7 +16,9 @@ ReactDOM.render(
       <FavoritesProvider>
         <ListingsProvider>
           <NotificationsProvider>
-            <App />
+            <ReviewsProvider>
+              <App />
+            </ReviewsProvider>
           </NotificationsProvider>
         </ListingsProvider>
       </FavoritesProvider>

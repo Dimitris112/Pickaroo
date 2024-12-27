@@ -1,0 +1,10 @@
+.reviewCard {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .reviewText {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
