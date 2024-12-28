@@ -1,0 +1,27 @@
+.HomePageContainer {
+    padding: 20px;
+  }
+  
+  .HomePageContainer h1 {
+    font-size: 2rem;
+    color: #2142b2;
+    margin-bottom: 10px;
+  }
+  
+  .HomePageContainer p {
+    font-size: 1.2rem;
+  }
+  
+  .HomePageContainer .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .HomePageContainer .card-body {
+    text-align: center;
+  }
+  
+  .HomePageContainer .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
